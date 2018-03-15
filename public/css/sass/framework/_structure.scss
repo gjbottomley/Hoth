@@ -54,8 +54,8 @@ iframe {
 ----------------*/
 
 body {
-	background: #0C001E;
-	font: #{($base-font-size / 16px) * 1em} / #{$line-height-ratio} $base-font-family, arial;
+	background: #fff;
+	font: $base-font-size $base-font-family, arial;
 	margin: 0;
 	font-family: $font;
 	position: relative;
