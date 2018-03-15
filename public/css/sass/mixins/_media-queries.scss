@@ -1,0 +1,11 @@
+// Media Query Mixin
+
+$bf: 16;
+
+@mixin bp($bp, $min-max: min-width) {
+	$px: $bp;
+
+	@media(#{$min-max}: #{$px}px) {
+		@content;
+	}
+}

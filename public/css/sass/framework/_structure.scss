@@ -1,0 +1,170 @@
+/*----------------------------------------
+
+	STRUCTURE
+
+----------------------------------------*/
+
+// Fonts
+@import "fonts/fonts";
+@import "fonts/icons";
+
+// Config
+@import "config/variables";
+
+// Mixins
+@import "mixins/gradient";
+@import "mixins/media-queries";
+@import "mixins/opacity";
+@import "mixins/prefixes";
+
+// Animations
+@import "animations/animate";
+
+// Components
+
+// Elements
+@import "elements/bars";
+@import "elements/buttons";
+
+/*
+	Global
+---------------*/
+* {
+	@include box-sizing(border-box);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html,
+body {
+	min-width: 320px;
+	zoom: 1;
+}
+
+// https://www.w3schools.com/html/html5_browsers.asp  = html5 support
+header, section, footer, aside, nav, main, article, figure {
+	display: block;
+}
+
+iframe {
+	border: 0;
+}
+
+/*
+	Body
+----------------*/
+
+body {
+	background: #0C001E;
+	font: #{($base-font-size / 16px) * 1em} / #{$line-height-ratio} $base-font-family, arial;
+	margin: 0;
+	font-family: $font;
+	position: relative;
+
+	-webkit-text-size-adjust: none; // stops the text from becoming bigger on orientation on iPhone / iPad devices
+	-webkit-font-smoothing: antialiased; // makes the font smooth on webkit devices
+	-moz-osx-font-smoothing: grayscale;
+
+	&.freeze {
+		overflow: hidden;
+	}
+}
+
+img {
+	max-width: 100%;
+	border: none;
+	height: auto;
+}
+
+.content-wrapper {
+	overflow: hidden;
+}
+
+/*
+	Wrappers / Containers
+----------------------------*/
+main {
+	display: block;
+}
+
+.container {
+	margin: auto;
+	position: relative;
+	height: 100%;
+	max-width: $container-width;
+	padding: 0 20px;
+}
+
+//Overflow == hidden
+.overflow {
+	overflow: hidden;
+}
+
+//Overflow == hidden
+.relative {
+	position: relative;
+}
+
+// Text align center
+.center {
+	@include bp(500) {
+		text-align: center;
+	}
+}
+
+/*
+	Typography
+-------------------*/
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+/*
+	Letter spacing
+----------------*/
+hr {
+	border: 0;
+	border-top: 1px solid #000000;
+	margin: 24px 0 8px;
+}
+
+a {
+	text-decoration: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+p {
+	font-size: 15px;
+	font-family: $base-font-family;
+
+	@include bp($mobile-break) {
+		font-size: 16px;
+	}
+}
+
+b, strong {
+	font-family: $font-semi;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.mobile-hide {
+	@media all and(max-width:$mobile-break-max) {
+		display: none;
+	}
+}
+
+.desktop-hide {
+	@include bp($mobile-break) {
+		display: none;
+	}
+}
